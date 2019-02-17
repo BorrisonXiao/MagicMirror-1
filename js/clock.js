@@ -1,30 +1,25 @@
-$(document).ready(function() {
-
-  function second_passed() {
-    $('.clock').removeClass('is-off');
+var clock = new Vue({
+  el: '#clock',
+  data: {
+    time: '',
+    date: ''
   }
-  setTimeout(second_passed, 2000)
-
-  $('.switcher').on('click', function(e) {
-    e.preventDefault();
-    $('.screen').toggleClass('glitch');
-  });
-
-
-  var newDate = new Date();
-  newDate.setDate(newDate.getDate());
-
-  setInterval(function() {
-
-    var hours = new Date().getHours();
-    var seconds = new Date().getSeconds();
-    var minutes = new Date().getMinutes();
-
-    var realTime = (hours < 10 ? '0' : '') + hours + ' : ' + (minutes < 10 ? '0' : '') + minutes + ' : ' + (seconds < 10 ? '0' : '') + seconds
-
-    $('.time').html(realTime);
-    $('.time').attr('data-time', realTime);
-
-  }, 1000);
-
 });
+
+var week = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
+var timerID = setInterval(updateTime, 1000);
+updateTime();
+
+function updateTime() {
+  var cd = new Date();
+  clock.time = zeroPadding(cd.getHours(), 2) + ':' + zeroPadding(cd.getMinutes(), 2) + ':' + zeroPadding(cd.getSeconds(), 2);
+  clock.date = zeroPadding(cd.getFullYear(), 4) + '-' + zeroPadding(cd.getMonth() + 1, 2) + '-' + zeroPadding(cd.getDate(), 2) + ' ' + week[cd.getDay()];
+};
+
+function zeroPadding(num, digit) {
+  var zero = '';
+  for (var i = 0; i < digit; i++) {
+    zero += '0';
+  }
+  return (zero + num).slice(-digit);
+}

@@ -1,4 +1,14 @@
 /* ---- particles.js container ---- */
+body {
+  margin: 0;
+  font: normal 75% Arial, Helvetica, sans-serif;
+}
+
+canvas {
+  display: block;
+  vertical-align: bottom;
+}
+
 #particles-js {
   position: absolute;
   width: 100%;
