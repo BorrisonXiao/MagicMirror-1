@@ -116,11 +116,6 @@ $(function() {
       }
 
 
-      if (data.main.temp >= 80) setBackground('hot', 'button-hot');
-      else if (data.main.temp >= 70) setBackground('warm', 'button-warm');
-      else if (data.main.temp >= 60) setBackground('cool', 'button-cool');
-      else setBackground('cold', 'button-cold');
-
       switch (data.weather[0].icon) {
         case '01d':
           $icon.addClass('wi wi-day-sunny');
