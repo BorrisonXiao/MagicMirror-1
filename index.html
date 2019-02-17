@@ -4,10 +4,7 @@
   <link rel="stylesheet" href="css/clock.css" />
   <link rel="stylesheet" href="css/bankinginfo.css" />
   <link rel="stylesheet" href="css/weather.css" />
-  <link
-    rel="stylesheet"
-    href="https://fonts.googleapis.com/css?family=Share+Tech+Mono"
-  />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Share+Tech+Mono" />
   <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js"></script>
@@ -16,8 +13,6 @@
 </head>
 
 <body>
-  <!-- voice rec -->
-  <script src="js/voice.js"></script>
 
   <!-- particles background container -->
   <div id="particles-js">
@@ -46,23 +41,23 @@
         </div>
         <div class="temperature" id="temperature">
           <h1 class="temp" id="temp">
-            <i id="condition"></i> <span id="num"></span
-            ><a class="fahrenheit active" id="fahrenheit" href="#">&deg;F</a
-            ><span class="divider secondary">|</span
-            ><a class="celsius" id="celsius" href="#">&deg;C</a>
+            <i id="condition"></i> <span id="num"></span><a class="fahrenheit active" id="fahrenheit" href="#">&deg;F</a><span class="divider secondary">|</span><a class="celsius" id="celsius" href="#">&deg;C</a>
           </h1>
         </div>
         <div class="forecast" id="forecast"></div>
       </div>
-      <script src="js/weather.js"></script>
+      <script src="js/weather.js">
+        console.log("load weather js")
+      </script>
     </div>
   </div>
 
-  <div class="mapContainer" hidden>
-    <iframe
-      src="https://www.google.com/maps/d/u/0/embed?mid=1qwtaWhN2Zxhsrbl-8lT7DL375xLg9wf_"
-      width="640"
-      height="480"
-    ></iframe>
+  <div class="mapContainer" show>
+    <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1qwtaWhN2Zxhsrbl-8lT7DL375xLg9wf_" width="500" height="500"></iframe>
   </div>
+
+  <!-- voice rec -->
+  <script src="js/voice.js">
+    console.log("load sound js")
+  </script>
 </body>

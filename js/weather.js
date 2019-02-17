@@ -43,19 +43,20 @@ $(function() {
 
   $.ajax({
       dataType: 'json',
-      url: 'https://ipapi.co/2607:b400:26:0:dc2a:bfd0:b7a:575f/json/'
+      url: '//ipapi.co/8.8.8.8/json/'
     })
     .then(function(data) {
       var yourLocation = data.city + ',' + data.postal + ',' + data.country;
-      getWeather(yourLocation);
+      window.getWeather(yourLocation);
+      console.log(yourLocation);
     });
 
-  function getWeather(input) {
+  window.getWeather = (input) => {
 
     var appid = '58b6f7c78582bffab3936dac99c31b25';
     var requestWeather = $.ajax({
       dataType: 'json',
-      url: 'https://api.openweathermap.org/data/2.5/weather',
+      url: '//api.openweathermap.org/data/2.5/weather',
       data: {
         q: input,
         units: 'imperial',
@@ -64,7 +65,7 @@ $(function() {
     });
     var requestForecast = $.ajax({
       dataType: 'json',
-      url: 'https://api.openweathermap.org/data/2.5/forecast/daily',
+      url: '//api.openweathermap.org/data/2.5/forecast/daily',
       data: {
         q: input,
         units: 'imperial',
@@ -83,7 +84,7 @@ $(function() {
       var weather = document.getElementById('weather');
       if (data.cod === '404') {
         $city.html('city not found');
-        setBackground('color404', 'button404');
+        // setBackground('color404', 'button404');
         weather.style.display = 'none';
       } else weather.style.display = '';
 
@@ -115,6 +116,19 @@ $(function() {
         $tempNumber.html(Math.round(data.main.temp));
       }
 
+      // function setBackground(background, button) {
+      //   $('body').removeClass().addClass(background);
+      //   $button.off().hover(function() {
+      //     $(this).removeClass('transparent').addClass(button);
+      //   }, function() {
+      //     $(this).removeClass().addClass('button transparent');
+      //   });
+      // }
+
+      // if (data.main.temp >= 80) setBackground('hot', 'button-hot');
+      // else if (data.main.temp >= 70) setBackground('warm', 'button-warm');
+      // else if (data.main.temp >= 60) setBackground('cool', 'button-cool');
+      // else setBackground('cold', 'button-cold');
 
       switch (data.weather[0].icon) {
         case '01d':
@@ -204,5 +218,4 @@ $(function() {
     if (inputLength) getWeather(input);
     event.preventDefault();
   });
-
 });

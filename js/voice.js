@@ -1,3 +1,5 @@
+var locationNow = "Blacksburg";
+
 $(document).ready(function() {
   navigator.mediaDevices.getUserMedia({
     audio: true
@@ -17,6 +19,12 @@ if (annyang) {
     "show me the map": function() {
       var displayContainer = document.getElementsByClassName("mapContainer")[0];
       displayContainer.hidden = false;
+    },
+    "weather in *location": function(location) {
+      console.log(locationNow);
+      locationNow = location;
+      console.log(locationNow);
+      refreshWeather();
     }
   };
 
@@ -30,4 +38,11 @@ if (annyang) {
     console.log("I think the user said: ", phrases[0]);
     console.log("But then again, it could be any of the following: ", phrases);
   });
+}
+
+function refreshWeather() {
+  console.log(locationNow);
+  console.log("prcsss ");
+  getWeather(locationNow);
+
 }

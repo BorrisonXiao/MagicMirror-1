@@ -22,12 +22,9 @@
 }
 
 .mapContainer {
-  object-fit: cover;
   position: absolute;
   left: 5%;
   bottom: 5%;
-  width: 300px;
-  height: 300px;
 }
 
 @keyframes pulse {
