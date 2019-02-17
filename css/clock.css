@@ -27,6 +27,14 @@
   bottom: 5%;
 }
 
+.w3-container {
+  position: absolute;
+  left: 25%;
+  bottom: 50%;
+  width: 1000px;
+  height: 100px;
+}
+
 @keyframes pulse {
   0% {
     text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 20px rgba(255, 255, 255, 0);

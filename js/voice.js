@@ -9,8 +9,41 @@ $(document).ready(function() {
 if (annyang) {
   // Let's define a command.
   var commands = {
+    "Good morning": function() {
+      var element = document.getElementsByClassName(
+        "w3-container w3-center w3-animate-opacity"
+      )[0];
+      element.hidden = false;
+    },
     hello: function() {
-      alert("Hello world!");
+      var element = document.getElementsByClassName(
+        "w3-container w3-center w3-animate-opacity"
+      )[0];
+      element.hidden = false;
+    },
+    "hello it's me": function() {
+      var element = document.getElementsByClassName(
+        "w3-container w3-center w3-animate-opacity"
+      )[0];
+      element.hidden = false;
+    },
+    goodbye: function() {
+      var element = document.getElementsByClassName(
+        "w3-container w3-center w3-animate-opacity"
+      )[0];
+      element.hidden = true;
+    },
+    bye: function() {
+      var element = document.getElementsByClassName(
+        "w3-container w3-center w3-animate-opacity"
+      )[0];
+      element.hidden = true;
+    },
+    "shut up": function() {
+      var element = document.getElementsByClassName(
+        "w3-container w3-center w3-animate-opacity"
+      )[0];
+      element.hidden = true;
     },
     "close the map": function() {
       var displayContainer = document.getElementsByClassName("mapContainer")[0];
@@ -44,5 +77,4 @@ function refreshWeather() {
   console.log(locationNow);
   console.log("prcsss ");
   getWeather(locationNow);
-
 }
