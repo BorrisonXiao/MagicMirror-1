@@ -11,7 +11,12 @@ async function getAllCustomers() {
 
     /* TODO: How to use the fetched data? */
     console.log(customerList[0]);
+    var displayContainer = document.createElement("div");
+    displayContainer.append(customerList[0]._id);
+    var customerContainer = document.getElementsByClassName(
+      "customerContainer"
+    )[0];
+    customerContainer.appendChild(displayContainer);
   };
   customerListReq.send();
 }
-
