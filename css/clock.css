@@ -5,8 +5,7 @@
   position: absolute;
   left: 5%;
   top: 5%;
-  color: #daf6ff;
-  text-shadow: 0 0 20px rgba(10, 175, 230, 1), 0 0 20px rgba(10, 175, 230, 0);
+  color: #ffffff;
   animation: pulse 1s infinite;
 }
 
@@ -24,14 +23,14 @@
 
 @keyframes pulse {
   0% {
-    text-shadow: 0 0 20px rgba(10, 175, 230, 1), 0 0 20px rgba(10, 175, 230, 0);
+    text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 20px rgba(255, 255, 255, 0);
   }
 
   100% {
-    text-shadow: 0 0 20px rgba(10, 175, 230, 1), 0 0 20px rgba(10, 175, 230, 1);
+    text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 20px rgba(255, 255, 255, 0.5);
   }
 
   50% {
-    text-shadow: 0 0 20px rgba(10, 175, 230, 1), 0 0 20px rgba(10, 175, 230, 0);
+    text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 20px rgba(255, 255, 255, 0);
   }
 }
