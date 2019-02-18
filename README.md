@@ -14,3 +14,9 @@ JS Libraries used:
 * particle js
 * jquery js
 * Vue js
+
+## TO RUN ON YOUR DEVICE
+* Have Nodejs on your machine
+* Run "npm install" on terminal
+* Run "node serve.js"
+* Open browser and go to "localhost:/8080"
